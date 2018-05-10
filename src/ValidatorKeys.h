@@ -1,7 +1,7 @@
 //------------------------------------------------------------------------------
 /*
     This file is part of validator-keys-tool:
-        https://github.com/ripple/validator-keys-tool
+        https://github.com/stoxum/validator-keys-tool
     Copyright (c) 2016 Ripple Labs Inc.
 
     Permission to use, copy, modify, and/or distribute this software for any
@@ -18,8 +18,8 @@
 */
 //==============================================================================
 
-#include <ripple/crypto/KeyType.h>
-#include <ripple/protocol/SecretKey.h>
+#include <stoxum/crypto/KeyType.h>
+#include <stoxum/protocol/SecretKey.h>
 
 namespace boost
 {

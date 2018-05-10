@@ -1,7 +1,7 @@
 //------------------------------------------------------------------------------
 /*
     This file is part of validator-keys-tool:
-        https://github.com/ripple/validator-keys-tool
+        https://github.com/stoxum/validator-keys-tool
     Copyright (c) 2016 Ripple Labs Inc.
 
     Permission to use, copy, modify, and/or distribute this software for any
@@ -20,9 +20,9 @@
 
 #include <ValidatorKeysTool.h>
 #include <ValidatorKeys.h>
-#include <ripple/beast/core/PlatformConfig.h>
-#include <ripple/beast/core/SemanticVersion.h>
-#include <ripple/beast/unit_test.h>
+#include <stoxum/beast/core/PlatformConfig.h>
+#include <stoxum/beast/core/SemanticVersion.h>
+#include <stoxum/beast/unit_test.h>
 #include <beast/unit_test/dstream.hpp>
 #include <boost/filesystem.hpp>
 #include <boost/format.hpp>
@@ -111,9 +111,9 @@ void createToken (boost::filesystem::path const& keyFile)
     // Update key file with new token sequence
     keys.writeToFile (keyFile);
 
-    std::cout << "Update rippled.cfg file with these values and restart rippled:\n\n";
+    std::cout << "Update stoxumd.cfg file with these values and restart stoxumd:\n\n";
     std::cout << "# validator public key: " <<
-        toBase58 (TOKEN_NODE_PUBLIC, keys.publicKey()) << "\n\n";
+        toBase58 (TokenType::NodePublic, keys.publicKey()) << "\n\n";
     std::cout << "[validator_token]\n";
 
     auto const tokenStr = token->toString();
@@ -140,9 +140,9 @@ void createRevocation (boost::filesystem::path const& keyFile)
     // Update key file with new token sequence
     keys.writeToFile (keyFile);
 
-    std::cout << "Update rippled.cfg file with these values and restart rippled:\n\n";
+    std::cout << "Update stoxumd.cfg file with these values and restart stoxumd:\n\n";
     std::cout << "# validator public key: " <<
-        toBase58 (TOKEN_NODE_PUBLIC, keys.publicKey()) << "\n\n";
+        toBase58 (TokenType::NodePublic, keys.publicKey()) << "\n\n";
     std::cout << "[validator_key_revocation]\n";
 
     auto const len = 72;
@@ -325,7 +325,7 @@ int main (int argc, char** argv)
     std::string const defaultKeyFile =
         (homeDir.empty () ?
             boost::filesystem::current_path ().string () : homeDir) +
-        "/.ripple/validator-keys.json";
+        "/.stoxum/validator-keys.json";
 
     try
     {

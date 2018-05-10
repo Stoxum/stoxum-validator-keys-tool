@@ -1,3 +1,3 @@
-[submodule "extras/ripple-libpp"]
-	path = extras/ripple-libpp
-	url = https://github.com/ripple/ripple-libpp.git
+[submodule "extras/stoxum-libpp"]
+	path = extras/stoxum-libpp
+	url = git@github.com:Stoxum/stoxum-libpp.git

@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------------
 /*
-    This file is part of rippled: https://github.com/ripple/rippled
+    This file is part of stoxumd: https://github.com/stoxum/stoxumd
     Copyright 2016 Ripple Labs Inc.
 
     Permission to use, copy, modify, and/or distribute this software for any
@@ -17,7 +17,7 @@
 */
 //==============================================================================
 
-#include <ripple/beast/unit_test.h>
+#include <stoxum/beast/unit_test.h>
 #include <boost/filesystem.hpp>
 #include <fstream>
 

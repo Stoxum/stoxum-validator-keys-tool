@@ -1,7 +1,7 @@
 //------------------------------------------------------------------------------
 /*
     This file is part of validator-keys-tool:
-        https://github.com/ripple/validator-keys-tool
+        https://github.com/stoxum/validator-keys-tool
     Copyright (c) 2016 Ripple Labs Inc.
 
     Permission to use, copy, modify, and/or distribute this software for any
@@ -19,11 +19,11 @@
 //==============================================================================
 
 #include <ValidatorKeys.h>
-#include <ripple/basics/StringUtilities.h>
-#include <ripple/json/json_reader.h>
-#include <ripple/json/to_string.h>
-#include <ripple/protocol/HashPrefix.h>
-#include <ripple/protocol/Sign.h>
+#include <stoxum/basics/StringUtilities.h>
+#include <stoxum/json/json_reader.h>
+#include <stoxum/json/to_string.h>
+#include <stoxum/protocol/HashPrefix.h>
+#include <stoxum/protocol/Sign.h>
 #include <beast/core/detail/base64.hpp>
 #include <boost/filesystem.hpp>
 #include <fstream>
@@ -107,7 +107,7 @@ ValidatorKeys::make_ValidatorKeys (
     }
 
     auto const secret = parseBase58<SecretKey> (
-        TokenType::TOKEN_NODE_PRIVATE, jKeys["secret_key"].asString());
+        TokenType::NodePrivate, jKeys["secret_key"].asString());
 
     if (! secret)
     {
@@ -150,8 +150,8 @@ ValidatorKeys::writeToFile (
 
     Json::Value jv;
     jv["key_type"] = to_string(keyType_);
-    jv["public_key"] = toBase58(TOKEN_NODE_PUBLIC, publicKey_);
-    jv["secret_key"] = toBase58(TOKEN_NODE_PRIVATE, secretKey_);
+    jv["public_key"] = toBase58(TokenType::NodePublic, publicKey_);
+    jv["secret_key"] = toBase58(TokenType::NodePrivate, secretKey_);
     jv["token_sequence"] = Json::UInt (tokenSequence_);
     jv["revoked"] = revoked_;
 

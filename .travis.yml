@@ -31,7 +31,7 @@ addons:
 
 matrix:
   include:
-    # Default BUILD is scons. Default APP is rippled.
+    # Default BUILD is scons. Default APP is stoxumd.
 
     - compiler: gcc
       env:
@@ -58,10 +58,10 @@ cache:
   - cmake
 
 before_install:
-  - ( cd extras/ripple-libpp/extras/rippled && bin/ci/ubuntu/install-dependencies.sh ../../../.. )
+  - ( cd extras/stoxum-libpp/extras/stoxumd && bin/ci/ubuntu/install-dependencies.sh ../../../.. )
 
 script:
-  - extras/ripple-libpp/extras/rippled/bin/ci/ubuntu/build-and-test.sh
+  - extras/stoxum-libpp/extras/stoxumd/bin/ci/ubuntu/build-and-test.sh
 
 notifications:
   email:

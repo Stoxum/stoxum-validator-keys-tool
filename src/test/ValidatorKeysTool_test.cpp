@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------------
 /*
-    This file is part of rippled: https://github.com/ripple/rippled
+    This file is part of stoxumd: https://github.com/stoxum/stoxumd
     Copyright 2016 Ripple Labs Inc.
 
     Permission to use, copy, modify, and/or distribute this software for any
@@ -20,7 +20,7 @@
 #include <ValidatorKeysTool.h>
 #include <ValidatorKeys.h>
 #include <test/KeyFileGuard.h>
-#include <ripple/protocol/SecretKey.h>
+#include <stoxum/protocol/SecretKey.h>
 
 namespace ripple {
 

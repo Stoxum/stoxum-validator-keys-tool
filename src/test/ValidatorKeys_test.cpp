@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------------
 /*
-    This file is part of rippled: https://github.com/ripple/rippled
+    This file is part of stoxumd: https://github.com/stoxum/stoxumd
     Copyright 2016 Ripple Labs Inc.
 
     Permission to use, copy, modify, and/or distribute this software for any
@@ -19,9 +19,9 @@
 
 #include <ValidatorKeys.h>
 #include <test/KeyFileGuard.h>
-#include <ripple/basics/StringUtilities.h>
-#include <ripple/protocol/HashPrefix.h>
-#include <ripple/protocol/Sign.h>
+#include <stoxum/basics/StringUtilities.h>
+#include <stoxum/protocol/HashPrefix.h>
+#include <stoxum/protocol/Sign.h>
 #include <beast/core/detail/base64.hpp>
 
 namespace ripple {
@@ -144,7 +144,7 @@ private:
             {
                 auto const kp = generateKeyPair (keyType, randomSeed ());
                 jv["secret_key"] =
-                    toBase58(TOKEN_NODE_PRIVATE, kp.second);
+                    toBase58(TokenType::NodePrivate, kp.second);
             }
             expectedError = "Key file '" + keyFile.string() +
                 "' contains invalid \"token_sequence\" field: " +
